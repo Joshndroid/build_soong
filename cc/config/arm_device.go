@@ -158,14 +158,6 @@ func init() {
 		"krait",
 		"denver")
 
-	replaceFirst := func(slice []string, from, to string) {
-		if slice[0] != from {
-			panic(fmt.Errorf("Expected %q, found %q", from, to))
-		}
-
-		slice[0] = to
-	}
-
 	replaceFirst(armClangCpuVariantCflags["krait"], "-mcpu=cortex-a15", "-mcpu=krait")
 	armClangCpuVariantCflags["krait"] = append(armClangCpuVariantCflags["krait"], "-mfpu=neon-vfpv4")
 
